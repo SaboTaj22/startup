@@ -1,3 +1,3 @@
 # startup
 
-[notes for midterm and exams](docs/notes.md)
+[notes](docs/notes.md)
