@@ -1,3 +1,3 @@
 # startup
 
-[notes](notes.md)
+[Link: notes.md](notes.md)
