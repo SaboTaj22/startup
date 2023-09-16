@@ -1,3 +1,3 @@
 # startup
 
-[notes](docs/notes.md)
+[notes](notes.md)
