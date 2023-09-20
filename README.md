@@ -10,13 +10,15 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
 - Home page
 - Inventory selection page
 - Checkout page
+- Frequently asked questions page
 - Subscription/profile sign up
 - Navigation bar
-- Shopping cart items stored
+- Shopping cart items stored in database
 - Pricing and sold items displayed in real time
+- Social media hyperlink
 
 # Technologies
-- HTML - Uses correct HTML structure for application. There will be 3 pages; a home page, an inventory page, and a checkout page.
+- HTML - Uses correct HTML structure for application. There will be 4 pages; a home page, an inventory page, a FAQ's page, and a checkout page.
 - CSS - Application styling that is responsive, uses good whitespace, color choice, and contrast.
 - JavaScript - Provides login, product display, shopping cart display, and backend endpoint calls.
 - Service - Backend service with endpoints for:
