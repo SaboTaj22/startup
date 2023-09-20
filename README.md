@@ -9,6 +9,7 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
 - Secure login over HTTPS
 - Home page
 - Inventory selection page
+- Inventory ordering page
 - Subscription/profile sign up
 - Navigation bar
 - Shopping cart items stored
