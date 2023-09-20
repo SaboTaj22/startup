@@ -19,10 +19,10 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
 - CSS - Application styling that is responsive, uses good whitespace, color choice, and contrast.
 - JavaScript - Provides login, product display, shopping cart display, and backend endpoint calls.
 - Service - Backend service with endpoints for:
-  - Login authentication
-  - Storing inventory items customers added to shopping cart
-  - Submitting orders
-  - Sending invoice emails to customer and business owner
+   - Login authentication
+   - Storing inventory items customers added to shopping cart
+   - Submitting orders
+   - Sending invoice emails to customer and business owner
 - Database Data - Store customer accounts and shopping cart items in database.
 - Login - Register and login users. Credentials securely stored in database. Can't purchase items form inventory unless authenticated.
 - WebSocket Data - If an item is sold, it is marked as sold for all other users to see.
