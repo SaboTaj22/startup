@@ -4,8 +4,7 @@
 Imagine a world where startups effortlessly conquer the global market! My cutting-edge sales web application is the ultimate game-changer, empowering startups to effortlessly streamline their sales and marketing efforts. With intuitive customer profiles, real-time marketing updates, and seamless mobile transactions, this web application will revolutionize how businesses connect with their audience. Join me in reshaping the future of commerce, one click at a time.
 
 # Design
-<img src ="images/startup_sketch_screenshot.png" width="125">
-![](images/startup_sketch_screenshot.png)
+<img src ="images/startup_sketch_screenshot.png" width="150">
 
 # Key Features
 - Secure login over HTTPS
