@@ -6,6 +6,7 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
 # Design
 <img src ="images/startup_sketch_screenshot.png" width="125">
 ![](images/startup_sketch_screenshot.png)
+
 # Key Features
 - Secure login over HTTPS
 - Home page
