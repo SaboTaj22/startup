@@ -1,5 +1,6 @@
 # Console Commands
 - ssh -i (copy and paste pem file path here) ubuntu@44.214.57.195
+- scp -i (copy and paste pem file path here) (copy and past file you'd like to upload to website here) ubuntu@44.214.57.195:public_html/(Name of file you'd like to add html to)
   
 # Notes
 - An IP address can be given a domain to be referenced to.
