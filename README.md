@@ -32,4 +32,15 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
 - WebSocket Data - If an item is sold, it is marked as sold for all other users to see.
 - React - Application ported to use the React web framework.
 
+# Deliverables
+This deliverable represents the structural framework of my application using HTML.
+
+- HTML pages - 4 HTML page that represent the ability to login and purchase art pieces.
+- Links - Each page consists of a header and footer. These provide consistent information and links to each unique page.
+- Text - Each page contains information about the products, pricing, and policies.
+- Images - There are 3 sample images in a grid within the inventory section.
+- Login - Input box and submit button for login. Also contains a customer checkout page with an area for them to enter info and submit an order.
+- Database - The shopping cart items and customer accounts represent data pulled from the database.
+- WebSocket - Counting items in shopping cart and marking them as sold represents realtime communication.
+
 [Link: notes.md](notes.md)
