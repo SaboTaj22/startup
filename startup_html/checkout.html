@@ -3,9 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Checkout - Krecia Fullmer Art</title>
 </head>
 <body>
-    
+    <header id="myHeader">
+        <h1>Krecia Fullmer Art</h1>
+  
+        <!-- Navigation elements -->
+        <nav>
+          <!-- Menu is a semantic alternative to <ul> that represents an interaction -->
+          <menu>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="inventory.html">Inventory</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </menu>
+        </nav>
+        <hr>
+    </header>
+
+    <main>
+        <section>
+            <h2>Items in Your Cart</h2>
+            <ul>
+                <li>Item 1 - $10.00</li>
+                <li>Item 2 - $15.00</li>
+                <li>Item 3 - $20.00</li>
+                <!-- Add more items as needed -->
+            </ul>
+        </section>
+
+        <section>
+            <h2>Customer Information</h2>
+            <form action="order_confirmation.html" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="address">Address:</label>
+                <input id="address" name="address" rows="4" required><br>
+
+                <label for="phone">Phone Number/Contact Info:</label>
+                <input type="text" id="phone" name="phone" required><br>
+
+                <label for="bank">Bank Account Info:</label>
+                <input type="text" id="bank" name="bank" required><br>
+
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="myFooter">
+        <hr />
+        <span class="text-reset">Taj Poulsen</span>
+        <br />
+        <a href="https://github.com/SaboTaj22/startup.git">GitHub</a>
+    </footer>
 </body>
 </html>
