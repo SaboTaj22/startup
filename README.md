@@ -42,6 +42,6 @@ This deliverable represents the structural framework of my application using HTM
 - Login - Input box and submit button for login. Also contains a customer checkout page with an area for them to enter info and submit an order.
 - Database - The shopping cart items and customer accounts represent data pulled from the database.
 - WebSocket - Counting items in shopping cart and marking them as sold represents realtime communication.
-- Git commits with meaningful comments - Bug fix, Page updates and creation, Creation of pages
+- Git commits with meaningful comments - Bug fix, Page updates and creation, Creation of pages, Description and grammar corrections.
   
 [Link: notes.md](notes.md)
