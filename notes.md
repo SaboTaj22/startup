@@ -6,7 +6,7 @@
 - An IP address can be given a domain to be referenced to.
 - To get rid of the "Not Secure" sign next to the url search, you need to have a web certificate.
 - html	The page container
-
+- Learned how to deploy startup
 # Common HTML Elements
 - head	Header information
 - title	Title of the page
