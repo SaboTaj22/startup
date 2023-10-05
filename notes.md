@@ -1,6 +1,11 @@
 # Console Commands
 - ssh -i (copy and paste pem file path here) ubuntu@44.214.57.195
 - scp -i (copy and paste pem file path here) (copy and past file you'd like to upload to website here) ubuntu@44.214.57.195:public_html/(Name of file you'd like to add html to)
+
+# Launching in Production Environment
+- Within the VSC terminal cd to the correct file
+- ./deployFiles.sh -k (copy and paste pem file path here) -h yourdomain.click -s startup
+- Doing this will make this deliverable of your startup available from https://startup.yourdomainname.
   
 # Notes
 - An IP address can be given a domain to be referenced to.
