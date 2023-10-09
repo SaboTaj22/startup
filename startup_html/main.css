@@ -94,3 +94,35 @@ body {
     transform: translateX(-50%);
     max-width: 60%;
 }
+
+/* Media query for smaller screens (e.g., mobile phones) */
+@media (max-width: 767.98px) {
+    .navbar .navbar-brand {
+        padding-top: 22px; /* Reduce top padding for smaller screens */
+    }
+}
+
+/* Custom CSS for the welcome image */
+.welcome_image {
+    width: 100%;
+    max-width: 100%; /* Ensure the image doesn't exceed its original size */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any extra spacing */
+    margin: 20px 0; /* Add margin to create space from the navigation bar and main content */
+    padding: 0; /* Remove any padding */
+    box-sizing: border-box; /* Include padding in the image's width */
+}
+
+/* Media query for medium screens */
+@media (max-width: 991.98px) {
+    .responsive-image {
+        margin: 10px 0; /* Reduce margin on medium screens */
+    }
+}
+
+/* Media query for small screens (e.g., mobile phones) */
+@media (max-width: 767.98px) {
+    .responsive-image {
+        margin: 5px 0; /* Reduce margin on small screens */
+    }
+}
