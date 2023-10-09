@@ -1,0 +1,96 @@
+/* Set the background color for the entire page */
+body {
+    background-color: #f8f7f6;
+}
+/* Custom CSS for the header */
+.navbar {
+    background-color: #f8f7f6; /* Change the background color */
+}
+
+.navbar * {
+    text-rendering: optimizeLegibility;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0em;
+    font-family: Cormorant Infant;
+    font-weight: 400;
+    font-style: normal;
+    /* font-size: 13px; */
+    letter-spacing: .21em;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: rgba(120, 101, 84, .73);
+}
+
+/* Center the brand/logo */
+.navbar .d-flex {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Add spacing between left and right menu items */
+.navbar .navbar-nav {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+/* Style the cart button and badge */
+.navbar .bi-cart-fill {
+    font-size: 24px; /* Adjust the cart icon size */
+}
+
+/* Adjust the spacing between the cart text and badge */
+.navbar .badge {
+    margin-left: 5px;
+}
+
+/* Media query for screens smaller than 992px (Bootstrap's lg breakpoint) */
+@media (max-width: 991.98px) {
+    /* Hide the desktop navigation menu */
+    .navbar-nav {
+        display: none;
+    }
+
+    /* Show the mobile overlay menu */
+    .Mobile-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+    }
+
+    /* Style the mobile overlay menu */
+    .Mobile-overlay-menu {
+        background-color: #fff;
+        height: 100%;
+        width: 80%; /* Adjust the width as needed */
+        position: fixed;
+        right: 0;
+        top: 0;
+        overflow-y: auto;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style the close button */
+    .Mobile-overlay-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+    }
+}
+/* Adjust the font size for the brand/logo */
+.navbar .navbar-brand {
+    font-size: 20px; /* Adjust the font size for the brand/logo */
+    padding-top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 60%;
+}
