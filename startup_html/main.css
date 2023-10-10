@@ -126,3 +126,48 @@ body {
         margin: 5px 0; /* Reduce margin on small screens */
     }
 }
+
+/* Style the footer */
+.Footer {
+    text-rendering: optimizeLegibility;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0em;
+    font-family: Cormorant Infant;
+    font-weight: 400;
+    font-style: normal;
+    /* font-size: 13px; */
+    letter-spacing: .21em;
+    line-height: 1em;
+    text-transform: uppercase;
+    color: rgba(120, 101, 84, .73);
+}
+
+/* Style the footer for medium screens */
+@media (max-width: 991.98px) {
+    .Footer {
+        font-size: 14px;
+    }
+}
+
+/* Style the footer for small screens (e.g., mobile phones) */
+@media (max-width: 767.98px) {
+    .Footer {
+        font-size: 12px;
+    }
+}
+
+/* Style footer links */
+.Footer a {
+    color: rgba(120, 101, 84, 0.73);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.Footer a:hover {
+    color: #000;
+}
+
+
