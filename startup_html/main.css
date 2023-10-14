@@ -190,7 +190,9 @@ body {
     font-family: Cormorant Infant;
     font-style: normal;
     font-size: 30px; /* Set the font size to 30px for large screens */
-    color: #f8f7f6; /* Set the font color to #f8f7f6 */
+    color: rgba(120, 101, 84, .73); /* Set the font color to custom color */
+    background-color: #f8f7f6; 
+    /* Sets background color to overall theme color */
     opacity: 0;
     transition: opacity 0.5s;
     padding: 20px; /* Add padding to the top and bottom to push the header closer to the image */
@@ -198,18 +200,18 @@ body {
 /* Media query for iPad Pro */
 @media (min-width: 1024px) {
     .welcome-header h1 {
-        font-size: 90px; /* Adjust the font size for iPad Pro */
+        font-size: 60px; /* Adjust the font size for iPad Pro */
     }
 
     .welcome-header p {
-        font-size: 60px; /* Adjust the font size for iPad Pro */
+        font-size: 30px; /* Adjust the font size for iPad Pro */
     }
 }
 
 /* Media query for iPad Air */
 @media (min-width: 768px) and (max-width: 1023px) {
     .welcome-header h1 {
-        font-size: 60px; /* Adjust the font size for iPad Air */
+        font-size: 50px; /* Adjust the font size for iPad Air */
     }
 
     .welcome-header p {
@@ -220,11 +222,11 @@ body {
 /* Media query for iPhone Pro */
 @media (max-width: 767px) {
     .welcome-header h1 {
-        font-size: 30px; /* Adjust the font size for iPhone Pro */
+        font-size: 25px; /* Adjust the font size for iPhone Pro */
     }
 
     .welcome-header p {
-        font-size: 20px; /* Adjust the font size for iPhone Pro */
+        font-size: 12px; /* Adjust the font size for iPhone Pro */
     }
 }
 
@@ -255,7 +257,39 @@ body {
     }
 }
 
+/* Style the submit button */
+button[type="submit"] {
+    position: relative;
+    padding: 1em 2.25em;
+    color: rgba(120, 101, 84, 0.73);
+    background-color: #fff;
+    /* color: #fff;
+    background-color: rgba(120, 101, 84, 0.73); */
+    border: 1px solid rgba(120, 101, 84, 0.73) !important;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden;
+}
 
+button[type="submit"]:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: rgba(120, 101, 84, 0.73); /* Change background color on hover */
+}
 
+/* Add styles for the spinner and label within the button */
+button[type="submit"] .newsletter-form-spinner {
+    display: inline-block;
+}
 
+button[type="submit"] .newsletter-form-button-label {
+    display: inline-block;
+    position: relative;
+}
 
