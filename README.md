@@ -32,7 +32,7 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
 - WebSocket Data - If an item is sold, it is marked as sold for all other users to see.
 - React - Application ported to use the React web framework.
 
-# Deliverables
+# HTML Deliverables
 This deliverable represents the structural framework of my application using HTML.
 
 - HTML pages - 4 HTML page that represent the ability to login and purchase art pieces.
@@ -43,5 +43,8 @@ This deliverable represents the structural framework of my application using HTM
 - Database - The shopping cart items and customer accounts represent data pulled from the database.
 - WebSocket - Counting items in shopping cart and marking them as sold represents realtime communication.
 - Git commits with meaningful comments - Bug fix, Page updates and creation, Creation of pages, Description and grammar corrections.
+
+# CSS Deliverables
+For this deliverable I created the main styling format used throughout the website, and customized the various HTML pages.
   
 [Link: notes.md](notes.md)
