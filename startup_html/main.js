@@ -14,3 +14,23 @@ document.addEventListener("DOMContentLoaded", function () {
         navbarMenu.classList.toggle("show");
     });
 });
+
+document.getElementById("contactForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the form from submitting by default
+
+    // Add your form validation logic here
+    const firstName = document.getElementById("firstName").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    // Validate the form fields (you can use regular expressions, etc.)
+    if (firstName === "" || email === "" || subject === "" || message === "") {
+        alert("All required fields must be filled out.");
+        return;
+    }
+
+    // If all fields are valid, you can submit the form to your backend or perform other actions
+    alert("Form submitted successfully!");
+    // You can also use AJAX to send the data to your server.
+});

@@ -1,3 +1,5 @@
+/* Index HTML CSS with Header and Footer */
+
 /* Set the background color for the entire page */
 body {
     background-color: #f8f7f6;
@@ -292,4 +294,67 @@ button[type="submit"] .newsletter-form-button-label {
     display: inline-block;
     position: relative;
 }
+
+/* Contact Me CSS */
+.container .contact_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.contact_page {
+    text-align: center;
+}
+
+.contact_page h2, .contact_page p, .contact_page label {
+    color: rgba(120, 101, 84, 0.73);
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+}
+
+.form-control {
+    width: 100%; /* Change the width to your preference */
+    max-width: 400px; /* Set a maximum width for form elements */
+    margin: 0 auto; /* Center form elements horizontally */
+}
+
+/* FAQ Page CSS */
+.faq_page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content at the top */
+    min-height: 100vh;
+    margin-bottom: 0;
+}
+
+.faq_page h2,
+.faq_page h3,
+.faq_page p {
+    color: rgba(120, 101, 84, 0.73);
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    max-width: 600px;
+    margin: 0 auto; /* Center content horizontally */
+}
+
+.faq_page h2 {
+    font-size: 30px; /* Customize the font size */
+    margin-bottom: 20px; /* Add space between title and content */
+    text-align: center;
+}
+
+.faq_page h3 {
+    font-size: 24px; /* Customize the font size for subheadings */
+    margin-top: 30px; /* Add space between subheadings and content */
+    text-align: left;
+}   
+
+.faq_page p {
+    font-size: 15px; /* Customize the font size for content */
+    margin-bottom: 20px; /* Add space between paragraphs */
+    text-align: left;
+    margin-left: 40px;
+}
+
 
