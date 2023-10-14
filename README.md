@@ -46,5 +46,11 @@ This deliverable represents the structural framework of my application using HTM
 
 # CSS Deliverables
 For this deliverable I created the main styling format used throughout the website, and customized the various HTML pages.
+- Header, footer, and main content body customized.
+- Navigation elements - You can click on each of the navigation elements and it will take you to the indicated page. Also created hover CSS so buttons looks more responsive and appealing to the eye. I also created a navigation bar that can be seen when the application is shrunk down. It doesn't work yet given that I need to do some JS coding for it. 
+- Responsive to window resizing - My app looks great on all window sizes and devices. I went through and customized each page individually.
+- Application elements - Used good contrast, whitespace, padding, flex, and appropriate media queries for responsiveness.
+- Application text content - Consistent fonts and color styling.
+- Application images - Added welcome image and created inventory grid.
   
 [Link: notes.md](notes.md)
