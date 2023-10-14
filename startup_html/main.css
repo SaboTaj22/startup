@@ -196,7 +196,7 @@ body {
     background-color: #f8f7f6; 
     /* Sets background color to overall theme color */
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 0.8s;
     padding: 20px; /* Add padding to the top and bottom to push the header closer to the image */
 }
 /* Media query for iPad Pro */
@@ -356,5 +356,33 @@ button[type="submit"] .newsletter-form-button-label {
     text-align: left;
     margin-left: 40px;
 }
+
+/* Inventory CSS */
+/* Grid Item CSS */
+
+.grid-item {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    max-width: 100%; /* Full width for grid items */
+}
+
+.grid-item img {
+    max-width: 100%; /* Make the images responsive */
+    height: 600px; /* Maintain aspect ratio */
+}
+
+.grid-item h2 {
+    font-size: 24px; /* Customize the font size for image names */
+    color: rgba(120, 101, 84, 0.73); /* Text color */
+    margin-top: 10px; /* Add space between the image name and price */
+}
+
+.grid-item p {
+    font-size: 18px; /* Customize the font size for prices */
+    color: rgba(120, 101, 84, 0.73); /* Text color */
+    margin-top: 5px; /* Add space between prices and the image */
+}
+
 
 
