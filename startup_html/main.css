@@ -384,5 +384,29 @@ button[type="submit"] .newsletter-form-button-label {
     margin-top: 5px; /* Add space between prices and the image */
 }
 
+/* Checkout HTML */
+#items-carousel {
+    color: rgba(120, 101, 84, 0.73);
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    padding-left: 25%;
+}
 
+#customer-information {
+    color: rgba(120, 101, 84, 0.73);
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+}
+
+.carousel-inner {
+    padding: 20px;
+}
+
+.form-group label {
+    font-size: 18px;
+}
+
+.form-control {
+    font-size: 16px;
+}
 
