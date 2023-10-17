@@ -46,5 +46,37 @@
 - svg	Scalable vector graphic content
 - iframe	Inline frame of another HTML page
 
+# JS Notes
+- Log: The basic usage of the console object is to output a log message.
+
+console.log('hello');
+// OUTPUT: hello
+You can create formatted messages in the log parameter.
+
+console.log('hello %s', 'world');
+// OUTPUT: hello world
+You can even specify CSS declarations in order to style the log output.
+
+console.log('%c JavaScript Demo', 'font-size:1.5em; color:green;');
+// OUTPUT: JavaScript Demo //in large green text
+
+- Timers
+If you are trying to see how long a piece of code is running you can wrap it with time and timeEnd calls and it will output the duration between the time and timeEnd calls.
+
+console.time('demo time');
+// ... some code that takes a long time.
+console.timeEnd('demo time');
+// OUTPUT: demo time: 9762.74 ms
+
+- Count
+To see how many times a block of code is called you can use the count function.
+
+console.count('a');
+// OUTPUT: a: 1
+console.count('a');
+// OUTPUT: a: 2
+console.count('b');
+// OUTPUT: b: 1
+
 # Elastic IP Address Info
 - Assigning an elastic IP address will change the IP address for your server, but it will not change again until you release the elastic IP address. If you do terminate your server and create a new one, you can again associate the same elastic IP address with your new server. Note that your elastic IP address is allocated until your release it, not until you terminate your instance. So make sure you release it when you no longer need it. Otherwise you will get a nasty $3 bill every month.
