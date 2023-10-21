@@ -1,3 +1,6 @@
+# Elastic IP Address Info
+- Assigning an elastic IP address will change the IP address for your server, but it will not change again until you release the elastic IP address. If you do terminate your server and create a new one, you can again associate the same elastic IP address with your new server. Note that your elastic IP address is allocated until your release it, not until you terminate your instance. So make sure you release it when you no longer need it. Otherwise you will get a nasty $3 bill every month.
+  
 # Console Commands
 - ssh -i (copy and paste pem file path here) ubuntu@44.214.57.195
 - scp -i (copy and paste pem file path here) (copy and past file you'd like to upload to website here) ubuntu@44.214.57.195:public_html/(Name of file you'd like to add html to)
@@ -541,5 +544,23 @@ const p = person(...['Ryan', 'Dahl']);
 console.log(p);
 // OUTPUT: {first: 'Ryan', last: 'Dahl'}
 <!-- OUTPUT: 2 -->
-# Elastic IP Address Info
-- Assigning an elastic IP address will change the IP address for your server, but it will not change again until you release the elastic IP address. If you do terminate your server and create a new one, you can again associate the same elastic IP address with your new server. Note that your elastic IP address is allocated until your release it, not until you terminate your instance. So make sure you release it when you no longer need it. Otherwise you will get a nasty $3 bill every month.
+
+- Exceptions
+try {
+  // normal execution code
+} catch (err) {
+  // exception handling code
+} finally {
+  // always called code
+
+-Fallbacks
+function getScores() {
+  try {
+    const scores = scoringService.getScores();
+    // store the scores so that we can use them later if the network is not available
+    window.localStorage.setItem('scores', scores);
+    return scores;
+  } catch {
+    return window.localStorage.getItem('scores');
+  }
+}
