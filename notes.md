@@ -575,3 +575,10 @@ getItem(name)	Gets a named item's value from local storage
 removeItem(name)	Removes a named item from local storage
 clear()	Clears all items in local storage
 
+- Promises
+  JavaScript executes as a single threaded application. That means there is only ever one piece of code executing at the same time. However, the fact that it does not execute concurrently does not mean that it does not execute in parallel. You can asynchronously execute code with the use of a JavaScript Promise. Because the execution is asynchronous the promise object can be in one of three states at any given point in time.
+
+pending - Currently running asynchronously
+fulfilled - Completed successfully
+rejected - Failed to complete
+
