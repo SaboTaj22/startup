@@ -564,3 +564,14 @@ function getScores() {
     return window.localStorage.getItem('scores');
   }
 }
+
+- Local Storage
+  
+There are four main functions that can be used with localStorage:
+
+Function	Meaning
+setItem(name, value)	Sets a named item's value into local storage
+getItem(name)	Gets a named item's value from local storage
+removeItem(name)	Removes a named item from local storage
+clear()	Clears all items in local storage
+
