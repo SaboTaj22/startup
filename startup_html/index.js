@@ -21,3 +21,14 @@ function onScroll() {
 
 // Add a scroll event listener to trigger the animation
 window.addEventListener('scroll', onScroll);
+
+// Store email when the form is submitted
+const signUpForm = document.querySelector('.welcome-container form');
+signUpForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const emailInput = signUpForm.querySelector('input[type="text"]');
+    const email = emailInput.value;
+
+    // Store the email in local storage
+    localStorage.setItem('userEmail', email);
+});

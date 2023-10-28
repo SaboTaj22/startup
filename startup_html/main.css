@@ -410,3 +410,19 @@ button[type="submit"] .newsletter-form-button-label {
     font-size: 16px;
 }
 
+
+/* User data styling */
+.user-data {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 50px;
+}
+
+#userNameDisplay, #databaseDataContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Cormorant Infant', serif;
+    color: rgba(120, 101, 84, 0.73);
+    font-size: 18px; /* Adjust font size as needed */
+    margin-right: 20px; /* Add spacing between user data and h2 */
+}
