@@ -28,11 +28,11 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
    - Submitting orders
    - Sending invoice emails to customer and business owner
 - Database Data - Store customer accounts and shopping cart items in database.
-- Login - Register and login users. Credentials securely stored in database. Can't purchase items fromm inventory unless authenticated.
+- Login - Register and login users. Credentials securely stored in database. Can't purchase items from inventory unless authenticated.
 - WebSocket Data - If an item is sold, it is marked as sold for all other users to see.
 - React - Application ported to use the React web framework.
 
-# HTML Deliverables
+# HTML Deliverable
 This deliverable represents the structural framework of my application using HTML.
 
 - HTML pages - 4 HTML page that represent the ability to login and purchase art pieces.
@@ -44,7 +44,7 @@ This deliverable represents the structural framework of my application using HTM
 - WebSocket - Counting items in shopping cart and marking them as sold represents realtime communication.
 - Git commits with meaningful comments - Bug fix, Page updates and creation, Creation of pages, Description and grammar corrections.
 
-# CSS Deliverables
+# CSS Deliverable
 For this deliverable I created the main styling format used throughout the website, and customized the various HTML pages.
 - Header, footer, and main content body customized.
 - Navigation elements - You can click on each of the navigation elements and it will take you to the indicated page. Also created hover CSS so buttons looks more responsive and appealing to the eye. I also created a navigation bar that can be seen when the application is shrunk down. It doesn't work yet given that I need to do some JS coding for it. 
@@ -52,5 +52,12 @@ For this deliverable I created the main styling format used throughout the websi
 - Application elements - Used good contrast, whitespace, padding, flex, and appropriate media queries for responsiveness.
 - Application text content - Consistent fonts and color styling.
 - Application images - Added welcome image and created inventory grid.
+
+# JavaScript Deliverable
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+- Login - When you press enter or the login button it takes you to the voting page.
+- Database - Displayed the voting counts. Currently this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- WebSocket - I used the setInterval function to periodically increase a random vote count. This will be replaced with WebSocket messages later.
+- application logic - The highlight and ranking number change based up the user's selections.
   
 [Link: notes.md](notes.md)
