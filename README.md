@@ -28,7 +28,7 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
    - Submitting orders
    - Sending invoice emails to customer and business owner
 - Database Data - Store customer accounts and shopping cart items in database.
-- Login - Register and login users. Credentials securely stored in database. Can't purchase items form inventory unless authenticated.
+- Login - Register and login users. Credentials securely stored in database. Can't purchase items fromm inventory unless authenticated.
 - WebSocket Data - If an item is sold, it is marked as sold for all other users to see.
 - React - Application ported to use the React web framework.
 
