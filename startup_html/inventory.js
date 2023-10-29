@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     clearSelectedItemsButton.addEventListener('click', function () {
         selectedItems = [];
         localStorage.removeItem('selectedItems');
-        updateSelectedItemsDisplay();
+        updateSelectedItemsDisplay();   
     });
 });
 

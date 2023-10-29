@@ -32,5 +32,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
 
     // If all fields are valid, you can submit the form to your backend or perform other actions
     alert("Form submitted successfully!");
-    // You can also use AJAX to send the data to your server.
+    
+    // Redirect the user to the "contact.html" page
+    window.location.href = "contact.html";
 });
