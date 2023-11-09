@@ -58,6 +58,14 @@ For this deliverable I implemented JavaScript so that the application works for 
 - Login - Created a custom welcome drop down. When you enter your email and press Sign Up you are redirected to the contact.html page in which you fill out a form to create a profile.
 - Database - Displayed name after filling out contact form in the top right corner of contact.html. Also displays items that are selected by user using "Add to Cart" in top right corner. This funcionality creates a cart and also offers the option to clear the cart. (More functionality and styling will come later.) Currently user name, email, and items selected are stored and retrieved from local storage, but it will be replaced with the database data later.
 - WebSocket - Within the shopping cart I used the a stack data strucuture to add and store items in an array for the creation of an order. The data stored within inventory will be retrieved by the checkout page. This will be replaced with WebSocket numbers later.
-- Application logic - The application starts by welcoming you and asking for an email address to begin. After entering and submitting one, you are sent to the contact.html to fill out the form for a profile. (Your profile will be stored in a data base.) There are 3 required fields, which, if not filled out provide instructions of what is needed for you to continue. Once a profile is created, you will then be able to add items to a cart which will be stored in a data base. This data can then be retrieved and uploaded into the checkout page. Once the checkout info is filled out, the order can be submitted and the items in the inventory will be marked as sold. 
+- Application logic - The application starts by welcoming you and asking for an email address to begin. After entering and submitting one, you are sent to the contact.html to fill out the form for a profile. (Your profile will be stored in a data base.) There are 3 required fields, which, if not filled out provide instructions of what is needed for you to continue. Once a profile is created, you will then be able to add items to a cart which will be stored in a data base. This data can then be retrieved and uploaded into the checkout page. Once the checkout info is filled out, the order can be submitted and the items in the inventory will be marked as sold.
+
+# Service Deliverable
+For this deliverable I added backend endpoints that receive inventory items and return an inventory list.
+Node.js/Express HTTP service - done!
+Static middleware for frontend - done!
+Calls to third party endpoints - I didn't have time to implement this. 😔
+Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for voting.
+Frontend calls service endpoints - I did this using the fetch function.
   
 [Link: notes.md](notes.md)
