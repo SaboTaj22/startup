@@ -62,10 +62,10 @@ For this deliverable I implemented JavaScript so that the application works for 
 
 # Service Deliverable
 For this deliverable I added backend endpoints that receive inventory items and return an inventory list.
-Node.js/Express HTTP service - done!
-Static middleware for frontend - done!
-Calls to third party endpoints - I didn't have time to implement this. 😔
-Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for voting.
-Frontend calls service endpoints - I did this using the fetch function.
+- Node.js/Express HTTP service - done!
+- Static middleware for frontend - done!
+- Calls to third party endpoints - I didn't have time to implement this. 😔
+- Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for voting.
+- Frontend calls service endpoints - I did this using the fetch function.
   
 [Link: notes.md](notes.md)
