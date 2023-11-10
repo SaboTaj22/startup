@@ -39,6 +39,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Submit Order button
+    const submitOrderButton = document.getElementById('submitOrder');
+    submitOrderButton.addEventListener('click', function () {
+        // Save the order in local storage (you can customize the order data)
+        localStorage.setItem('order', JSON.stringify(selectedItems));
+
+        // Optional: Clear the selected items array
+        selectedItems = [];
+
+        // Optional: Update the display
+        updateSelectedItemsDisplay();
+    });
+
     // Display the selected items on page load
     updateSelectedItemsDisplay();
 
@@ -47,9 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
     clearSelectedItemsButton.addEventListener('click', function () {
         selectedItems = [];
         localStorage.removeItem('selectedItems');
-        updateSelectedItemsDisplay();   
+        updateSelectedItemsDisplay();
     });
 });
+
 
 
 

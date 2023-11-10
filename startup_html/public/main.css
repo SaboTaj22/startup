@@ -450,7 +450,7 @@ button[type="submit"] .newsletter-form-button-label {
     margin-top: 10px; /* Add space between the title and cart contents */
 }
 
-.cart_page #clearSelectedItemsButton {
+.cart_page #clearSelectedItemsButton #submitOrder{
     font-size: 13px; /* Customize the font size for the clear button */
     background-color: rgba(120, 101, 84, 0.73); /* Background color for the button */
     color: #fff; /* Text color for the button */
