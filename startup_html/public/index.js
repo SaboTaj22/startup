@@ -1,35 +1,42 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000;
 
-// The service port. In production the frontend code is statically hosted by the service on the same port.
-const port = process.argv.length > 2 ? process.argv[2] : 3000;
-
-// JSON body parsing using built-in middleware
 app.use(express.json());
-
-// Serve up the frontend static content hosting
 app.use(express.static('public'));
 
-// Router for service endpoints
-const apiRouter = express.Router();
+var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// GetScores
-apiRouter.get('/scores', (_req, res) => {
-  res.send(scores);
+// Endpoint to get selected items
+apiRouter.get('/selectedItems', (_req, res) => {
+  const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+  res.json(selectedItems);
 });
 
-// SubmitScore
-apiRouter.post('/score', (req, res) => {
-  scores = updateScores(req.body, scores);
-  res.send(scores);
+// Endpoint to add items to the cart
+apiRouter.post('/addToCart', (req, res) => {
+  const { itemName, itemPrice } = req.body;
+  let selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
+
+  if (!selectedItems.some(item => item.name === itemName)) {
+    selectedItems.push({ name: itemName, price: itemPrice });
+    localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+  }
+
+  res.json(selectedItems);
 });
 
-// Return the application's default page if the path is unknown
+// Endpoint to clear the cart
+apiRouter.post('/clearCart', (_req, res) => {
+  localStorage.removeItem('selectedItems');
+  res.json([]);
+});
+
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'public' });
 });
 
 app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
