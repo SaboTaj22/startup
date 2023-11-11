@@ -8,6 +8,7 @@
 # Launching in Production Environment
 - Within the VSC terminal cd to the correct file
 - ./deployFiles.sh -k (copy and paste pem file path here) -h yourdomain.click -s startup
+- ./deployService.sh -k (copy and paste pem file path here) -h yourdomain.click -s startup
 - Doing this will make this deliverable of your startup available from https://startup.yourdomainname.
   
 # Notes
