@@ -61,7 +61,7 @@ For this deliverable I implemented JavaScript so that the application works for 
 - Application logic - The application starts by welcoming you and asking for an email address to begin. After entering and submitting one, you are sent to the contact.html to fill out the form for a profile. (Your profile will be stored in a data base.) There are 3 required fields, which, if not filled out provide instructions of what is needed for you to continue. Once a profile is created, you will then be able to add items to a cart which will be stored in a data base. This data can then be retrieved and uploaded into the checkout page. Once the checkout info is filled out, the order can be submitted and the items in the inventory will be marked as sold.
 
 # Service Deliverable
-For this deliverable I added backend endpoints that receive inventory items and return an inventory list.
+For this deliverable I added backend endpoints that retrieve inventory items, add items to a cart, retrieves submitted orders, clears cart of an order, and submits orders. I also improved the login and workflow of the website. After entering your email, you will be taken to the contact page to fill out your information. Once you fill it out, you can click on the inventory page to make your new order. Your name will now appear, and it will be connected to an order that you submit. 
 - Create an HTTP service using Node.js and Express - done!
 - Frontend served up using express static middleware - done!
 - Calls to third party endpoints - I accessed the quotable API that generates random quotes. These are displayed on the home page below the welcome message header.
