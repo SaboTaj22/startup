@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
 app.use(express.json());
 app.use(express.static('public'));
 
-const apiRouter = express.Router();
+var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // Endpoint to get selected items
