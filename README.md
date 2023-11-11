@@ -66,7 +66,7 @@ For this deliverable I added backend endpoints that receive inventory items and 
 - Frontend served up using express static middleware - done!
 - Calls to third party endpoints - I accessed the quotable API that generates random quotes. These are displayed on the home page below the welcome message header.
 - Frontend calls service endpoints - I did this using the fetch function. I also used the Get method which serves static files, specifically index.html, from the public directory.
-- Backend service endpoints - I've included the service end points, path, method, purposes below: 
+- Backend service endpoints - I've included the service end points, paths, methods, and purposes below: 
   
    - Get Selected Items Endpoint:
      - Path: /api/selectedItems
