@@ -68,29 +68,29 @@ For this deliverable I added backend endpoints that receive inventory items and 
 - Frontend calls service endpoints - I did this using the fetch function. I also used the Get method which serves static files, specifically index.html, from the public directory.
 - Backend service endpoints - I've included the service end points, path, method, purposes below: 
   
-   Get Selected Items Endpoint:
-   Path: /api/selectedItems
-   Method: GET
-   Purpose: Retrieves the selected items from local storage.
+   - Get Selected Items Endpoint:
+     Path: /api/selectedItems
+     Method: GET
+     Purpose: Retrieves the selected items from local storage.
    
-   Add to Cart Endpoint:
-   Path: /api/addToCart
-   Method: POST
-   Purpose: Adds items to the cart. Expects JSON payload with itemName and itemPrice. Saves the updated cart in local storage.
+   - Add to Cart Endpoint:
+     Path: /api/addToCart
+     Method: POST
+     Purpose: Adds items to the cart. Expects JSON payload with itemName and itemPrice. Saves the updated cart in local storage.
    
-   Clear Cart Endpoint:
-   Path: /api/clearCart
-   Method: POST
-   Purpose: Clears the cart. Removes selected items from local storage.
+   - Clear Cart Endpoint:
+     Path: /api/clearCart
+     Method: POST
+     Purpose: Clears the cart. Removes selected items from local storage.
    
-   Submit Order Endpoint:
-   Path: /api/submitOrder
-   Method: POST
-   Purpose: Submits an order. Expects JSON payload with userName and items. Saves the order in local storage, clears the cart, and sends a success response.
+   - Submit Order Endpoint:
+     Path: /api/submitOrder
+     Method: POST
+     Purpose: Submits an order. Expects JSON payload with userName and items. Saves the order in local storage, clears the cart, and sends a success response.
    
-   Get Orders Endpoint:
-   Path: /api/getOrders
-   Method: GET
-   Purpose: Retrieves all submitted orders from local storage.
+   - Get Orders Endpoint:
+     Path: /api/getOrders
+     Method: GET
+     Purpose: Retrieves all submitted orders from local storage.
   
 [Link: notes.md](notes.md)
