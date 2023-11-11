@@ -64,8 +64,33 @@ For this deliverable I implemented JavaScript so that the application works for 
 For this deliverable I added backend endpoints that receive inventory items and return an inventory list.
 - Create an HTTP service using Node.js and Express - done!
 - Frontend served up using express static middleware - done!
-- Calls to third party endpoints - Access API and have it do something on your website!
-- Backend service endpoints - Placeholders for login that stores the current user on the server. Endpoints for voting.
-- Frontend calls service endpoints - I did this using the fetch function.
+- Calls to third party endpoints - I accessed the quotable API that generates random quotes. These are displayed on the home page below the welcome message header.
+- Frontend calls service endpoints - I did this using the fetch function. I also used the Get method which serves static files, specifically index.html, from the public directory.
+- Backend service endpoints - I've included the service end points, paths, methods, and purposes below: 
+  
+   - Get Selected Items Endpoint:
+     - Path: /api/selectedItems
+     - Method: GET
+     - Purpose: Retrieves the selected items from local storage.
+   
+   - Add to Cart Endpoint:
+     - Path: /api/addToCart
+     - Method: POST
+     - Purpose: Adds items to the cart. Expects JSON payload with itemName and itemPrice. Saves the updated cart in local storage.
+   
+   - Clear Cart Endpoint:
+     - Path: /api/clearCart
+     - Method: POST
+     - Purpose: Clears the cart. Removes selected items from local storage.
+   
+   - Submit Order Endpoint:
+     - Path: /api/submitOrder
+     - Method: POST
+     - Purpose: Submits an order. Expects JSON payload with userName and items. Saves the order in local storage, clears the cart, and sends a success response.
+   
+   - Get Orders Endpoint:
+     - Path: /api/getOrders
+     - Method: GET
+     - Purpose: Retrieves all submitted orders from local storage.
   
 [Link: notes.md](notes.md)
