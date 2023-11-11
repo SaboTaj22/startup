@@ -459,3 +459,47 @@ button[type="submit"] .newsletter-form-button-label {
     cursor: pointer;
     margin-top: 10px; /* Add space below the cart contents */
 }
+
+/* Style the quote-container */
+.quote-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 40px; /* Adjust as needed */
+    margin-top: 90px; /* Add margin-top to position it down by 20 pixels */
+}
+/* Media query for medium screens */
+@media (max-width: 1023px) {
+    .quote-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        font-size: 24px; /* Adjust font size for medium screens */
+    }
+}
+
+/* Media query for small screens */
+@media (max-width: 767px) {
+    .quote-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        font-size: 20px; /* Adjust font size for small screens */
+    }
+}
+
+/* Media query for extra small screens */
+@media (max-width: 479px) {
+    .quote-container {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        font-size: 18px; /* Adjust font size for extra small screens */
+    }
+}
+
+
