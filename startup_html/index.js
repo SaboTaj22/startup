@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static('public'));
 
-var apiRouter = express.Router();
+const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // Endpoint to get selected items
@@ -31,6 +31,27 @@ apiRouter.post('/addToCart', (req, res) => {
 apiRouter.post('/clearCart', (_req, res) => {
   localStorage.removeItem('selectedItems');
   res.json([]);
+});
+
+// Endpoint to submit an order
+apiRouter.post('/submitOrder', (req, res) => {
+  const { userName, items } = req.body;
+
+  // Save the order in local storage
+  const orders = JSON.parse(localStorage.getItem('orders')) || [];
+  orders.push({ userName, items });
+  localStorage.setItem('orders', JSON.stringify(orders));
+
+  // Clear the selected items array
+  localStorage.removeItem('selectedItems');
+
+  res.json({ success: true, message: 'Order submitted successfully.' });
+});
+
+// Endpoint to get all submitted orders
+apiRouter.get('/getOrders', (_req, res) => {
+  const orders = JSON.parse(localStorage.getItem('orders')) || [];
+  res.json(orders);
 });
 
 app.use((_req, res) => {
