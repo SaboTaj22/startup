@@ -92,5 +92,11 @@ For this deliverable I added backend endpoints that retrieve inventory items, ad
      - Path: /api/getOrders
      - Method: GET
      - Purpose: Retrieves all submitted orders from local storage.
+    
+# DB Deliverable
+For this deliverable I stored the votes in the database.
+- MongoDB Atlas database created - done!
+- Endpoints for data - My endpoints for manipulating application data now process the data and send it to Mongo.
+- Stores data in MongoDB - done!
   
 [Link: notes.md](notes.md)
