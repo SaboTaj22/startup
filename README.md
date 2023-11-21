@@ -96,7 +96,7 @@ For this deliverable I added backend endpoints that retrieve inventory items, ad
 # DB Deliverable
 For this deliverable I stored the votes in the database.
 - MongoDB Atlas database created - done!
-- Endpoints for data - My endpoints for manipulating application data now process the data and send it to Mongo.
+- Endpoints for data - My endpoints for manipulating application data now process the data and send it to Mongo. The data that is passed to mongo for an order is the user name, items submitted in order, price of the item, and a timestamp of when the order occured. 
 - Stores data in MongoDB - done!
   
 [Link: notes.md](notes.md)
