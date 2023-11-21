@@ -94,7 +94,7 @@ For this deliverable I added backend endpoints that retrieve inventory items, ad
      - Purpose: Retrieves all submitted orders from local storage.
     
 # DB Deliverable
-For this deliverable I stored submitted orders in the MongoDB rather than the local storage.
+For this deliverable I stored submitted orders in the MongoDB rather than the local storage. I also modified my endpoints to add and get orders in a more simplifed and efficient way to meet the criteria for the assignement. 
 - MongoDB Atlas database created - done!
 - Endpoints for data - My endpoints for manipulating application data now process the data and send it to MongoDB. The data that is passed to mongo for an order is the user name, items submitted in the order, price of the item, and a timestamp of when the order occured. 
 - Stores data in MongoDB - done!
