@@ -1,41 +1,61 @@
 const { MongoClient } = require('mongodb');
 const config = require('./dbConfig.json');
 
-async function main() {
-  // Connect to the database cluster
-  const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
-  const client = new MongoClient(url);
-  const db = client.db('orders');
-  const collection = db.collection('submissions');
+const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
+const client = new MongoClient(url);
+const db = client.db('orders');
+const ordersCollection = db.collection('submission');
 
-  // Test that you can connect to the database
-  (async function testConnection() {
+async function connectToDatabase() {
+  try {
     await client.connect();
-    await db.command({ ping: 1 });b
-  })().catch((ex) => {
-    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
-    process.exit(1);
-  });
-
-  // Insert a document
-  const house = {
-    name: 'Beachfront views',
-    summary: 'From your bedroom to the beach, no shoes required',
-    property_type: 'Condo',
-    beds: 4,
-  };
-  await collection.insertOne(house);
-
-  // Query the documents
-  const query = { property_type: 'Condo', beds: { $lt: 2 } };
-  const options = {
-    sort: { score: -1 },
-    limit: 10,
-  };
-
-  const cursor = collection.find(query, options);
-  const rentals = await cursor.toArray();
-  rentals.forEach((i) => console.log(i));
+    console.log('Connected to MongoDB');
+  } catch (error) {
+    console.error(`Unable to connect to the database: ${error.message}`);
+    throw error;
+  }
 }
 
-main().catch(console.error);
+async function addOrder(order) {
+  try {
+    // Add a timestamp to the order before inserting it into the database
+    order.timestamp = new Date();
+
+    // Ensure that at least one item is selected
+    if (!order.items || order.items.length === 0) {
+      throw new Error('No items selected in the order.');
+    }
+
+    // Insert each selected item as a separate document
+    const insertedItems = await Promise.all(order.items.map(async (item) => {
+      const result = await ordersCollection.insertOne({
+        userName: order.userName,
+        item: item.name,
+        price: item.price,
+        timestamp: order.timestamp,
+      });
+      return result.ops[0];
+    }));
+
+    console.log('Order items inserted successfully:', insertedItems);
+    return insertedItems;
+  } catch (error) {
+    console.error(`Error adding order: ${error.message}`);
+    throw error;
+  }
+}
+
+function getOrders() {
+  const query = {};
+  const options = {
+    sort: { timestamp: -1 },
+  };
+  const cursor = ordersCollection.find(query, options);
+  return cursor.toArray();
+}
+
+module.exports = {
+  connectToDatabase,
+  addOrder,
+  getOrders,
+};

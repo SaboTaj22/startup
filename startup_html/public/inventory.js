@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Read and display the user name
     const userName = localStorage.getItem('userName');
     if (userName) {
-        userNameDisplay.textContent = `${userName}`; // Display the user's name if it exists in localStorage
+        userNameDisplay.textContent = `${userName}`;
     }
 
     // Function to update the display of selected items
@@ -42,15 +42,34 @@ document.addEventListener('DOMContentLoaded', function () {
     submitOrderButton.addEventListener('click', function () {
         // Save the order in local storage along with the user's name
         const order = {
-            userName: userName || 'Guest', // Use 'Guest' if userName is not available
+            userName: userName || 'Guest',
             items: selectedItems
         };
-        localStorage.setItem('order', JSON.stringify(order));
 
-        // Optional: Clear the selected items array
-        selectedItems = [];
-        localStorage.removeItem('selectedItems');
-        updateSelectedItemsDisplay();
+        // Send the order data to the server
+        fetch('/api/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(order),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to submit order. Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Order submitted successfully:', data);
+            // Optional: Clear the selected items array
+            selectedItems = [];
+            localStorage.removeItem('selectedItems');
+            updateSelectedItemsDisplay();
+        })
+        .catch(error => {
+            console.error('Error submitting order:', error);
+        });
     });
 
     // Display the selected items on page load

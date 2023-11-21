@@ -1,4 +1,5 @@
 const express = require('express');
+const { connectToDatabase, addOrder, getOrders } = require('./database');
 const app = express();
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
@@ -8,50 +9,30 @@ app.use(express.static('public'));
 var apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// Endpoint to get selected items
-apiRouter.get('/selectedItems', (_req, res) => {
-  const selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
-  res.json(selectedItems);
-});
+// Connect to the MongoDB database
+connectToDatabase();
 
-// Endpoint to add items to the cart
-apiRouter.post('/addToCart', (req, res) => {
-  const { itemName, itemPrice } = req.body;
-  let selectedItems = JSON.parse(localStorage.getItem('selectedItems')) || [];
-
-  if (!selectedItems.some(item => item.name === itemName)) {
-    selectedItems.push({ name: itemName, price: itemPrice });
-    localStorage.setItem('selectedItems', JSON.stringify(selectedItems));
+// Endpoint to add an order
+apiRouter.post('/orders', async (req, res) => {
+  try {
+    const order = req.body;
+    const result = await addOrder(order);
+    res.status(201).json({ success: true, message: 'Order added successfully', data: result.ops[0] });
+  } catch (error) {
+    console.error(`Error adding order: ${error.message}`);
+    res.status(500).json({ success: false, message: 'Internal server error' });
   }
-
-  res.json(selectedItems);
 });
 
-// Endpoint to clear the cart
-apiRouter.post('/clearCart', (_req, res) => {
-  localStorage.removeItem('selectedItems');
-  res.json([]);
-});
-
-// Endpoint to submit an order
-apiRouter.post('/submitOrder', (req, res) => {
-  const { userName, items } = req.body;
-
-  // Save the order in local storage
-  const orders = JSON.parse(localStorage.getItem('orders')) || [];
-  orders.push({ userName, items });
-  localStorage.setItem('orders', JSON.stringify(orders));
-
-  // Clear the selected items array
-  localStorage.removeItem('selectedItems');
-
-  res.json({ success: true, message: 'Order submitted successfully.' });
-});
-
-// Endpoint to get all submitted orders
-apiRouter.get('/getOrders', (_req, res) => {
-  const orders = JSON.parse(localStorage.getItem('orders')) || [];
-  res.json(orders);
+// Endpoint to get all orders
+apiRouter.get('/orders', async (_req, res) => {
+  try {
+    const orders = await getOrders();
+    res.status(200).json({ success: true, data: orders });
+  } catch (error) {
+    console.error(`Error getting orders: ${error.message}`);
+    res.status(500).json({ success: false, message: 'Internal server error' });
+  }
 });
 
 app.use((_req, res) => {
