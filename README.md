@@ -94,9 +94,16 @@ For this deliverable I added backend endpoints that retrieve inventory items, ad
      - Purpose: Retrieves all submitted orders from local storage.
     
 # DB Deliverable
-For this deliverable I stored the votes in the database.
+For this deliverable I stored submitted orders in the MongoDB rather than the local storage. I also modified my endpoints to add and get orders in a more simplifed and efficient way to meet the criteria for the assignement. 
 - MongoDB Atlas database created - done!
-- Endpoints for data - My endpoints for manipulating application data now process the data and send it to Mongo.
+- Endpoints for data - My endpoints for manipulating application data now process the data and send it to MongoDB. The data that is passed to mongo for an order is the user name, items submitted in the order, price of the item, and a timestamp of when the order occured. 
 - Stores data in MongoDB - done!
+
+# Login Deliverable
+For this deliverable the logged in user is connected with the orders they submit.
+- New user registration - Creates a new account in the database.
+- Existing user authentication - Stores the order under the same user if the user already exists.
+- Stores and retrieves credentials in MongoDB - Stores both user and their orders.
+- Restricts application functionality based upon authentication - You cannot order until you have logged in. This is restricted on the frontend only.
   
 [Link: notes.md](notes.md)
