@@ -25,7 +25,7 @@ window.addEventListener('scroll', onScroll);
 
 // Store email when the form is submitted
 const signUpForm = document.querySelector('.welcome-container form');
-signUpForm.addEventListener('submit', function (e) {
+signUpForm.addEventListener('Create', function (e) {
     e.preventDefault();
     const emailInput = signUpForm.querySelector('input[type="text"]');
     const email = emailInput.value;
@@ -64,6 +64,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loginControls = document.getElementById('loginControls');
     const playControls = document.getElementById('playControls');
 
+    // List of restricted pages
+    const restrictedPages = ['checkout.html', 'contact.html', 'faq.html', 'inventory.html'];
+
+    // Function to disable all links and buttons on a page
+    function disablePageElements() {
+        const allLinks = document.querySelectorAll('a');
+        const allButtons = document.querySelectorAll('button');
+
+        allLinks.forEach(link => link.setAttribute('disabled', 'true'));
+        allButtons.forEach(button => button.setAttribute('disabled', 'true'));
+    }
+
     if (userName) {
         document.getElementById('customerName').textContent = userName;
         loginControls.style.display = 'none';
@@ -73,15 +85,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         playControls.style.display = 'none';
 
         // Check if the current page is one of the restricted pages
-        const restrictedPages = ['checkout.html', 'contact.html', 'faq.html', 'inventory.html'];
-        const currentLocation = window.location.pathname.split('/').pop(); // Get the current page name
+        const currentLocation = window.location.pathname.split('/').pop();
 
         if (restrictedPages.includes(currentLocation)) {
             // Redirect to the home page for non-logged-in users
             window.location.href = 'index.html';
+        } else {
+            // Disable all links and buttons on non-restricted pages
+            disablePageElements();
         }
     }
 });
+
 
 async function loginUser() {
     loginOrCreate(`/api/auth/login`);
@@ -117,8 +132,7 @@ async function loginOrCreate(endpoint) {
 }
 
 function order() {
-    // Assuming order() is a placeholder for an action when the user clicks an "Order" button
-    // You can replace it with the actual functionality you want.
+    window.location.href = 'inventory.html';
 }
 
 function logout() {
@@ -128,14 +142,23 @@ function logout() {
     }).then(() => (window.location.href = '/'));
 }
 
-// Other functions remain unchanged
-
-function setDisplay(controlId, display) {
+async function getUser(email) {
+    let scores = [];
+    // See if we have a user with the given email.
+    const response = await fetch(`/api/user/${email}`);
+    if (response.status === 200) {
+      return response.json();
+    }
+  
+    return null;
+  }
+  
+  function setDisplay(controlId, display) {
     const playControlEl = document.querySelector(`#${controlId}`);
     if (playControlEl) {
-        playControlEl.style.display = display;
+      playControlEl.style.display = display;
     }
-}
+  }
 
 
   
