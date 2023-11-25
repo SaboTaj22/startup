@@ -502,4 +502,10 @@ button[type="submit"] .newsletter-form-button-label {
     }
 }
 
+/* Style for disabled links */
+.disabled-link {
+    pointer-events: none;
+    color: #999; /* Change the color to your preference for disabled links */
+    text-decoration: none !important;
+}
 

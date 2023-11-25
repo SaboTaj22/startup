@@ -20,20 +20,7 @@ function onScroll() {
     }
 }
 
-// Add a scroll event listener to trigger the animation
-window.addEventListener('scroll', onScroll);
-
-// Store email when the form is submitted
-const signUpForm = document.querySelector('.welcome-container form');
-signUpForm.addEventListener('Create', function (e) {
-    e.preventDefault();
-    const emailInput = signUpForm.querySelector('input[type="text"]');
-    const email = emailInput.value;
-
-    // Store the email in local storage
-    localStorage.setItem('userEmail', email);
-});
-
+// Function to display the quote
 function displayQuote() {
     fetch('https://api.quotable.io/random')
         .then((response) => response.json())
@@ -48,14 +35,19 @@ function displayQuote() {
             quoteEl.textContent = data.content;
             authorEl.textContent = data.author;
 
+            containerEl.innerHTML = ''; // Clear previous content
             containerEl.appendChild(quoteEl);
             containerEl.appendChild(authorEl);
         });
 }
 
-// Call displayQuote immediately if the welcome header is already in the viewport
-if (isElementInViewport(document.querySelector('.welcome-header'))) {
-    displayQuote();
+// Add a scroll event listener to trigger the animation
+window.addEventListener('scroll', onScroll);
+
+// Function to disable navigation bar links
+function disableNavLinks() {
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    navLinks.forEach(link => link.classList.add('disabled-link'));
 }
 
 // Check if the DOM content is loaded before executing the script
@@ -66,15 +58,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // List of restricted pages
     const restrictedPages = ['checkout.html', 'contact.html', 'faq.html', 'inventory.html'];
-
-    // Function to disable all links and buttons on a page
-    function disablePageElements() {
-        const allLinks = document.querySelectorAll('a');
-        const allButtons = document.querySelectorAll('button');
-
-        allLinks.forEach(link => link.setAttribute('disabled', 'true'));
-        allButtons.forEach(button => button.setAttribute('disabled', 'true'));
-    }
 
     if (userName) {
         document.getElementById('customerName').textContent = userName;
@@ -91,8 +74,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             // Redirect to the home page for non-logged-in users
             window.location.href = 'index.html';
         } else {
-            // Disable all links and buttons on non-restricted pages
-            disablePageElements();
+            // Disable navigation bar links specifically
+            disableNavLinks();
+            // Display the quote even if the user is not logged in
+            displayQuote();
         }
     }
 });
