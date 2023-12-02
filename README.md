@@ -107,5 +107,13 @@ Each user must create a unique user name (email for now). The user will not be a
 - Existing user authentication - Stores the order under the same user if the user already exists.
 - Stores and retrieves credentials in MongoDB - Stores both user and their orders.
 - Restricts application functionality based upon authentication - Navlinks in the header cannot be accessed until you've logged in. This is restricted on the frontend.
+
+# Websocket Deliverable
+For this deliverable I used webSocket to update the votes on the frontend in realtime.
+
+- Backend listens for WebSocket connection - done!
+- Frontend makes WebSocket connection - done!
+- Data sent over WebSocket connection - done!
+- WebSocket data displayed - All user votes display in realtime. I'm really proud that this is working. Way cool!
   
 [Link: notes.md](notes.md)
