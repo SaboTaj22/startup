@@ -29,7 +29,7 @@ Imagine a world where startups effortlessly conquer the global market! My cuttin
    - Sending invoice emails to customer and business owner
 - Database Data - Store customer accounts and shopping cart items in database.
 - Login - Register and login users. Credentials securely stored in database. Can't purchase items from inventory unless authenticated.
-- WebSocket Data - If an item is sold, it is marked as sold for all other users to see.
+- WebSocket Data - If a customer has questions, they can go to the FAQ page to ask questions by typing their name and the question they have.
 - React - Application ported to use the React web framework.
 
 # HTML Deliverable
@@ -109,11 +109,11 @@ Each user must create a unique user name (email for now). The user will not be a
 - Restricts application functionality based upon authentication - Navlinks in the header cannot be accessed until you've logged in. This is restricted on the frontend.
 
 # Websocket Deliverable
-For this deliverable I used webSocket to update the votes on the frontend in realtime.
+For this deliverable I used Websockets to create a live chat in the FAQ page in realtime. Users can now log in, make orders, and visit the FAQ page to enter their name and ask questions. (If mulitple windows are pulled up you can have multiple people in the conversation.) The backend now listens for websocket connection, front end makes websocket connections, and data is sent over websocket connections. 
 
 - Backend listens for WebSocket connection - done!
 - Frontend makes WebSocket connection - done!
 - Data sent over WebSocket connection - done!
-- WebSocket data displayed - All user votes display in realtime. I'm really proud that this is working. Way cool!
+- WebSocket data displayed - All user conversations display in realtime!
   
 [Link: notes.md](notes.md)
