@@ -15,7 +15,7 @@ app.use(express.static('public'));
 app.use(cookieParser());
 app.set('trust proxy', true);
 
-var apiRouter = express.Router();
+const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // Connect to the MongoDB database
@@ -122,6 +122,8 @@ function setAuthCookie(res, authToken) {
   });
 }
 
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
+
+peerProxy(httpService);
