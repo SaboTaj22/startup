@@ -598,4 +598,15 @@ Testing - Automated tests at multiple levels to ensure correctness.
 Deployment - Automated packaging and delivery of code from the development environment to the production environment.
 The toolchain that we use for our React project consists of GitHub as the code repository, Vite for JSX, TS, development and debugging support, ESBuild for converting to ES6 modules and transpiling (with Babel underneath), Rollup for bundling and tree shaking, PostCSS for CSS transpiling, and finally a simple bash script (deployReact.sh) for deployment.
 
+- Vite
+To create a new React-based web application using Vite, open your console and run the following commands:
 
+npm create vite@latest demoVite -- --template react
+cd demoVite
+npm install
+npm run dev
+
+Stop Vite from hosting the application by pressing q.
+
+- Build a production release
+When you execute npm run dev you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run npm run build. This executes the build script found in your package.json and invokes the Vite CLI. vite build transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment-ready version contained in a distribution subdirectory named dist.
