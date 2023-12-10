@@ -610,3 +610,19 @@ Stop Vite from hosting the application by pressing q.
 
 - Build a production release
 When you execute npm run dev you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run npm run build. This executes the build script found in your package.json and invokes the Vite CLI. vite build transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment-ready version contained in a distribution subdirectory named dist.
+
+Directory	File	Purpose
+./		
+index.html	Primary page for the application. This is the starting point to load all of the JSX components beginning with main.jsx.
+package.json	NPM definition for package dependencies and script commands. This is what maps npm run dev to actually start up Vite.
+package-lock.json	Version constraints for included packages (do not edit this).
+vite.config.js	Configuration setting for Vite. Specifically this sets up React for development.
+./public		
+vite.svg	Vite logo for use as favicon and for display in the app.
+./src		
+main.jsx	Entry point for code execution. This simply loads the App component found in App.jsx.
+index.css	CSS for the entire application.
+App.jsx	JSX for top level application component. This displays the logs and implements the click counter.
+App.css	CSS for the top level application component.
+./src/assets		
+react.svg	React logo for display in the app.
