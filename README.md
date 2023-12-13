@@ -125,10 +125,10 @@ For this deliverable I converted the application over to use Vue. I know it is s
 - Hooks - Vue uses class properties instead of UseState to track changes in vote state.
 - Application converted to use React
   
-10% Bundled using WebPack and Babel as generated from using create-react-app
-30% Multiple functional react components
-30% React router
-20% React hooks
-10% - Multiple Git commits with meaningful comments.
+- 10% Bundled using WebPack and Babel as generated from using create-react-app
+- 30% Multiple functional react components
+- 30% React router
+- 20% React hooks
+- 10% - Multiple Git commits with meaningful comments.
   
 [Link: notes.md](notes.md)
