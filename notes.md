@@ -583,3 +583,46 @@ pending - Currently running asynchronously
 fulfilled - Completed successfully
 rejected - Failed to complete
 
+# React
+- Tool Chains
+As web programming becomes more and more complex it became necessary to abstract away some of that complexity with a series of tools. Some common functional pieces in a web application tool chain include:
+
+Code repository - Stores code in a shared, versioned, location.
+Linter - Removes, or warns, of non-idiomatic code usage.
+Prettier - Formats code according to a shared standard.
+Transpiler - Compiles code into a different format. For example, from JSX to JavaScript, TypeScript to JavaScript, or SCSS to CSS.
+Polyfill - Generates backward compatible code for supporting old browser versions that do not support the latest standards.
+Bundler - Packages code into bundles for delivery to the browser. This enables compatibility (for example with ES6 module support), or performance (with lazy loading).
+Minifier - Removes whitespace and renames variables in order to make code smaller and more efficient to deploy.
+Testing - Automated tests at multiple levels to ensure correctness.
+Deployment - Automated packaging and delivery of code from the development environment to the production environment.
+The toolchain that we use for our React project consists of GitHub as the code repository, Vite for JSX, TS, development and debugging support, ESBuild for converting to ES6 modules and transpiling (with Babel underneath), Rollup for bundling and tree shaking, PostCSS for CSS transpiling, and finally a simple bash script (deployReact.sh) for deployment.
+
+- Vite
+To create a new React-based web application using Vite, open your console and run the following commands:
+
+npm create vite@latest demoVite -- --template react
+cd demoVite
+npm install
+npm run dev
+
+Stop Vite from hosting the application by pressing q.
+
+- Build a production release
+When you execute npm run dev you are bundling the code to a temporary directory that the Vite debug HTTP server loads from. When you want to bundle your application so that you can deploy to a production environment you need to run npm run build. This executes the build script found in your package.json and invokes the Vite CLI. vite build transpiles, minifies, injects the proper JavaScript, and then outputs everything to a deployment-ready version contained in a distribution subdirectory named dist.
+
+Directory	File	Purpose
+./		
+index.html	Primary page for the application. This is the starting point to load all of the JSX components beginning with main.jsx.
+package.json	NPM definition for package dependencies and script commands. This is what maps npm run dev to actually start up Vite.
+package-lock.json	Version constraints for included packages (do not edit this).
+vite.config.js	Configuration setting for Vite. Specifically this sets up React for development.
+./public		
+vite.svg	Vite logo for use as favicon and for display in the app.
+./src		
+main.jsx	Entry point for code execution. This simply loads the App component found in App.jsx.
+index.css	CSS for the entire application.
+App.jsx	JSX for top level application component. This displays the logs and implements the click counter.
+App.css	CSS for the top level application component.
+./src/assets		
+react.svg	React logo for display in the app.
