@@ -124,7 +124,8 @@ For this deliverable I converted the application over to use Vue. I know it is s
 - Router - Routing between login and voting components.
 - Hooks - Vue uses class properties instead of UseState to track changes in vote state.
 - Application converted to use React
-  
+
+Grading Scale
 - 10% Bundled using WebPack and Babel as generated from using create-react-app
 - 30% Multiple functional react components
 - 30% React router
