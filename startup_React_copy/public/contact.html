@@ -12,7 +12,8 @@
     <link href="main.css" rel="stylesheet" />
     <!-- Include your custom JavaScript -->
     <script src="main.js"></script>
-    <script src="index.js"></script>
+    <script src="login.js"></script>
+    <script src="contact.js"></script>
 </head>
 <body>
     <!-- Navigation elements -->
@@ -47,21 +48,40 @@
             </div>
         </div>
     </nav>
-<hr>
-    <!-- Welcome Image -->
-<div class="welcome-container">
-    <img src="images/KM-3098-2_Original.jpeg" alt="Welcome Image" class="welcome_image">
-    <header class="welcome-header">
-        <h1>Welcome</h1>
-        <p>Subscribe to receive updates!</p>
-        <form method="get" action="contact.html">
-            <input type="text" id="Email" placeholder="Email Address" />
-            <button type="submit">Sign Up</button>
+    <hr>
+    <div class="contact_page">
+        <div class="user-data">
+            <div id="userNameDisplay"></div>
+            <div id="databaseDataContainer"></div>
+        </div>
+        <h2>Contact Me</h2>
+        <p>Fill out the form below, or email me at kreciafullmerart@gmail.com</p>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="firstName">First Name (required)</label>
+                <input type="text" class="form-control" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name (required)</label>
+                <input type="text" class="form-control" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email (required)</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject (optional)</label>
+                <input type="text" class="form-control" id="subject">
+            </div>
+            <div class="form-group">
+                <label for="message">Message (optional)</label>
+                <textarea class="form-control" id="message" rows="4"></textarea>
+            </div>
+            <button type="submit" action="inventory.html" class="btn btn-primary">SUBMIT</button>
         </form>
-    </header>
-</div>
-
-<hr>
+    </div>
+    
+    <hr>
     <!-- Footer -->
     <footer class="Footer" role="contentinfo" data-controller="FooterBreakpoints" data-controllers-bound="FooterBreakpoints">
         <div class="Footer-inner clear">
@@ -71,8 +91,8 @@
                         <p style="text-align: center;">
                             <a href="inventory.html">Collections</a> | <a href="faq.html">FAQ</a> | <a href="contact.html">Contact</a>
                         </p>
-                        <p style="text-align: center; font-size: 9px;">© 2023 Krecia Fullmer Art LLC, All rights reserved</p>
-                        <p style="text-align: center; font-size: 9px;">Taj Poulsen- <a href="https://github.com/SaboTaj22/startup.git" target="_blank">GitHub</a></p>
+                        <p style="text-align: center; font-size: 9px">© 2023 Krecia Fullmer Art LLC, All rights reserved</p>
+                        <p style="text-align: center; font-size: 9px">Taj Poulsen- <a href="https://github.com/SaboTaj22/startup.git" target="_blank">GitHub</a></p>
                     </div>
                 </div>
             </div>
@@ -84,4 +104,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-eCk1IyTEX5wFfjP5z5lou5b/4F5G5f9fFZw5f5Sdq4V5Z5fF5I5eV5I5X5fF5eV5I5eF5F5V5E5V5E5I5fF5F5V5E5B5E5U5vF5B5E5B5E5O5I5G5H5fF5" crossorigin="anonymous"></script>
 </body>
 </html>
-
