@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import WelcomeHeader from './WelcomeHeader';
+import WelcomeHeader from './login/WelcomeHeader';
 
 function App() {
   return (
