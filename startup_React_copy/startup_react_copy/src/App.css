@@ -1,38 +1,512 @@
-.App {
+/* Index HTML CSS with Header and Footer */
+
+/* Set the background color for the entire page */
+body {
+  background-color: #f8f7f6;
+}
+/* Custom CSS for the header */
+.navbar {
+  background-color: #f8f7f6; /* Change the background color */
+}
+
+.navbar * {
+  text-rendering: optimizeLegibility;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0em;
+  font-family: Cormorant Infant;
+  font-weight: 400;
+  font-style: normal;
+  /* font-size: 13px; */
+  letter-spacing: .21em;
+  line-height: 1em;
+  text-transform: uppercase;
+  color: rgba(120, 101, 84, .73);
+}
+
+/* Center the brand/logo */
+.navbar .d-flex {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add spacing between left and right menu items */
+.navbar .navbar-nav {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/* Style the cart button and badge */
+.navbar .bi-cart-fill {
+  font-size: 24px; /* Adjust the cart icon size */
+}
+
+/* Adjust the spacing between the cart text and badge */
+.navbar .badge {
+  margin-left: 5px;
+}
+
+/* Media query for screens smaller than 992px (Bootstrap's lg breakpoint) */
+@media (max-width: 991.98px) {
+  /* Hide the desktop navigation menu */
+  .navbar-nav {
+      display: none;
+  }
+
+  /* Show the mobile overlay menu */
+  .Mobile-overlay {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+  }
+
+  /* Style the mobile overlay menu */
+  .Mobile-overlay-menu {
+      background-color: #fff;
+      height: 100%;
+      width: 80%; /* Adjust the width as needed */
+      position: fixed;
+      right: 0;
+      top: 0;
+      overflow-y: auto;
+      padding: 20px;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Style the close button */
+  .Mobile-overlay-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+  }
+}
+/* Adjust the font size for the brand/logo */
+.navbar .navbar-brand {
+  font-size: 20px; /* Adjust the font size for the brand/logo */
+  padding-top: 20px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 60%;
+}
+
+/* Media query for smaller screens (e.g., mobile phones) */
+@media (max-width: 767.98px) {
+  .navbar .navbar-brand {
+      padding-top: 22px; /* Reduce top padding for smaller screens */
+      font-size: 15px;
+  }
+}
+
+/* Custom CSS for the welcome image */
+.welcome_image {
+  width: 100%;
+  max-width: 100%; /* Ensure the image doesn't exceed its original size */
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 20px 0; /* Add margin to create space from the navigation bar and main content */
+  padding: 0; /* Remove any padding */
+  box-sizing: border-box; /* Include padding in the image's width */
+}
+
+/* Media query for medium screens */
+@media (max-width: 991.98px) {
+  .responsive-image {
+      margin: 10px 0; /* Reduce margin on medium screens */
+  }
+}
+
+/* Media query for small screens (e.g., mobile phones) */
+@media (max-width: 767.98px) {
+  .responsive-image {
+      margin: 5px 0; /* Reduce margin on small screens */
+  }
+}
+
+/* Style the footer */
+.Footer {
+  text-rendering: optimizeLegibility;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0em;
+  font-family: Cormorant Infant;
+  font-weight: 400;
+  font-style: normal;
+  /* font-size: 13px; */
+  letter-spacing: .21em;
+  line-height: 1em;
+  text-transform: uppercase;
+  color: rgba(120, 101, 84, .73);
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+/* Style the footer for medium screens */
+@media (max-width: 991.98px) {
+  .Footer {
+      font-size: 12px;
+  }
+}
+
+/* Style the footer for small screens (e.g., mobile phones) */
+@media (max-width: 767.98px) {
+  .Footer {
+      font-size: 10px;
+  }
+}
+
+/* Style footer links */
+.Footer a {
+  color: rgba(120, 101, 84, 0.73);
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.Footer a:hover {
+  color: #000;
+}
+
+/* Style the welcome-container to position the header over the image */
+.welcome-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Style the welcome-header (initially hidden) */
+.welcome-header {
+  position: absolute;
+  top: 20%; /* Adjust the top position to push it closer to the top of the web page */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: Cormorant Infant;
+  font-style: normal;
+  font-size: 30px; /* Set the font size to 30px for large screens */
+  color: rgba(120, 101, 84, .73); /* Set the font color to custom color */
+  background-color: #f8f7f6; 
+  /* Sets background color to overall theme color */
+  opacity: 0;
+  transition: opacity 0.8s;
+  padding: 20px; /* Add padding to the top and bottom to push the header closer to the image */
+}
+/* Media query for iPad Pro */
+@media (min-width: 1024px) {
+  .welcome-header h1 {
+      font-size: 60px; /* Adjust the font size for iPad Pro */
+  }
+
+  .welcome-header p {
+      font-size: 30px; /* Adjust the font size for iPad Pro */
+  }
+}
+
+/* Media query for iPad Air */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .welcome-header h1 {
+      font-size: 50px; /* Adjust the font size for iPad Air */
+  }
+
+  .welcome-header p {
+      font-size: 30px; /* Adjust the font size for iPad Air */
+  }
+}
+
+/* Media query for iPhone Pro */
+@media (max-width: 767px) {
+  .welcome-header h1 {
+      font-size: 25px; /* Adjust the font size for iPhone Pro */
+  }
+
+  .welcome-header p {
+      font-size: 12px; /* Adjust the font size for iPhone Pro */
+  }
+}
+
+/* Media query for iPad Pro */
+@media (min-width: 1024px) {
+  .welcome-header form input,
+  .welcome-header form button {
+      font-size: 30px; /* Adjust the font size for iPad Pro */
+      padding: 10px 20px; /* Adjust the padding for iPad Pro */
+  }
+}
+
+/* Media query for iPad Air */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .welcome-header form input,
+  .welcome-header form button {
+      font-size: 20px; /* Adjust the font size for iPad Air */
+      padding: 8px 16px; /* Adjust the padding for iPad Air */
+  }
+}
+
+/* Media query for iPhone Pro */
+@media (max-width: 767px) {
+  .welcome-header form input,
+  .welcome-header form button {
+      font-size: 16px; /* Adjust the font size for iPhone Pro */
+      padding: 6px 12px; /* Adjust the padding for iPhone Pro */
+  }
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  position: relative;
+  padding: 1em 2.25em;
+  color: rgba(120, 101, 84, 0.73);
+  background-color: #fff;
+  /* color: #fff;
+  background-color: rgba(120, 101, 84, 0.73); */
+  border: 1px solid rgba(120, 101, 84, 0.73) !important;
+  font-size: 15px;
+  font-weight: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s;
+  overflow: hidden;
+}
+
+button[type="submit"]:hover {
+  color: #fff; /* Change text color on hover */
+  background-color: rgba(120, 101, 84, 0.73); /* Change background color on hover */
+}
+
+/* Add styles for the spinner and label within the button */
+button[type="submit"] .newsletter-form-spinner {
+  display: inline-block;
+}
+
+button[type="submit"] .newsletter-form-button-label {
+  display: inline-block;
+  position: relative;
+}
+
+/* Contact Me CSS */
+.container .contact_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.contact_page {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contact_page h2, .contact_page p, .contact_page label {
+  color: rgba(120, 101, 84, 0.73);
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-control {
+  width: 100%; /* Change the width to your preference */
+  max-width: 400px; /* Set a maximum width for form elements */
+  margin: 0 auto; /* Center form elements horizontally */
 }
 
-.App-header {
-  background-color: #282c34;
+/* FAQ Page CSS */
+.faq_page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content at the top */
   min-height: 100vh;
+  margin-bottom: 0;
+}
+
+.faq_page h2,
+.faq_page h3,
+.faq_page p {
+  color: rgba(120, 101, 84, 0.73);
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
+  max-width: 600px;
+  margin: 0 auto; /* Center content horizontally */
+}
+
+.faq_page h2 {
+  font-size: 30px; /* Customize the font size */
+  margin-bottom: 20px; /* Add space between title and content */
+  text-align: center;
+}
+
+.faq_page h3 {
+  font-size: 24px; /* Customize the font size for subheadings */
+  margin-top: 30px; /* Add space between subheadings and content */
+  text-align: left;
+}   
+
+.faq_page p {
+  font-size: 15px; /* Customize the font size for content */
+  margin-bottom: 20px; /* Add space between paragraphs */
+  text-align: left;
+  margin-left: 40px;
+}
+
+/* Inventory CSS */
+/* Grid Item CSS */
+
+.grid-item {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
+  max-width: 100%; /* Full width for grid items */
+}
+
+.grid-item img {
+  max-width: 100%; /* Make the images responsive */
+  height: 600px; /* Maintain aspect ratio */
+}
+
+.grid-item h2 {
+  font-size: 24px; /* Customize the font size for image names */
+  color: rgba(120, 101, 84, 0.73); /* Text color */
+  margin-top: 10px; /* Add space between the image name and price */
+}
+
+.grid-item p {
+  font-size: 18px; /* Customize the font size for prices */
+  color: rgba(120, 101, 84, 0.73); /* Text color */
+  margin-top: 5px; /* Add space between prices and the image */
+}
+
+/* Checkout HTML */
+#items-carousel {
+  color: rgba(120, 101, 84, 0.73);
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
+  padding-left: 25%;
+}
+
+#customer-information {
+  color: rgba(120, 101, 84, 0.73);
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
+}
+
+.carousel-inner {
+  padding: 20px;
+}
+
+.form-group label {
+  font-size: 18px;
+}
+
+.form-control {
+  font-size: 16px;
+}
+
+
+/* User data styling */
+.user-data {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end;
+  padding-right: 55px;
+}
+
+#userNameDisplay, #databaseDataContainer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
+  color: rgba(120, 101, 84, 0.73);
+  font-size: 18px; /* Adjust font size as needed */
+  margin-left: 20px; /* Add spacing between user data and h2 */
+}
+
+/* Style for the Cart page */
+.cart_page {
+  text-align: center;
+  color: rgba(120, 101, 84, 0.73);
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant Infant', serif;
+  margin-top: 20px; /* Add space from the top */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 55px;
+}
+
+.cart_page h2 {
+  font-size: 24px; /* Customize the font size for the title */
+  padding-right: 110px;
+}
+
+.cart_page #selectedItemsDisplay {
+  font-size: 18px; /* Customize the font size for the cart contents */
+  margin-top: 10px; /* Add space between the title and cart contents */
+}
+
+.cart_page #clearSelectedItemsButton #submitOrder{
+  font-size: 13px; /* Customize the font size for the clear button */
+  background-color: rgba(120, 101, 84, 0.73); /* Background color for the button */
+  color: #fff; /* Text color for the button */
+  border: none;
+  padding: 10px 20px; /* Add padding to the button */
+  cursor: pointer;
+  margin-top: 10px; /* Add space below the cart contents */
+}
+
+/* Style the quote-container */
+.quote-container {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   color: white;
+  font-family: 'Cormorant Infant', serif;
+  font-size: 40px; /* Adjust as needed */
+  margin-top: 90px; /* Add margin-top to position it down by 20 pixels */
+}
+/* Media query for medium screens */
+@media (max-width: 1023px) {
+  .quote-container {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      font-size: 24px; /* Adjust font size for medium screens */
+  }
 }
 
-.App-link {
-  color: #61dafb;
+/* Media query for small screens */
+@media (max-width: 767px) {
+  .quote-container {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      font-size: 20px; /* Adjust font size for small screens */
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* Media query for extra small screens */
+@media (max-width: 479px) {
+  .quote-container {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      font-size: 18px; /* Adjust font size for extra small screens */
   }
 }
+
+/* Style for disabled links */
+.disabled-link {
+  pointer-events: none;
+  color: #999; /* Change the color to your preference for disabled links */
+  text-decoration: none !important;
+}
+
+

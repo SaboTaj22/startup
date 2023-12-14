@@ -1,91 +1,70 @@
-import React from 'react';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { Login } from './login/login';
-import { Play } from './play/play';
-import { Scores } from './scores/scores';
-import { About } from './about/about';
-import { AuthState } from './login/authState';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
+import WelcomeHeader from './WelcomeHeader';
 
 function App() {
-  const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
-  const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
-  const [authState, setAuthState] = React.useState(currentAuthState);
-
   return (
-    <BrowserRouter>
-      <div className='body bg-dark text-light'>
-        <header className='container-fluid'>
-          <nav className='navbar fixed-top navbar-dark'>
-            <div className='navbar-brand'>
-              Simon<sup>&reg;</sup>
+    <div>
+      {/* Navigation elements */}
+      <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid">
+          {/* Brand name or logo centered in the middle */}
+          <div className="d-flex justify-content-between align-items-center w-100">
+            <div className="navbar-nav">
+              {/* Left-side menu items */}
+              <ul className="navbar-nav">
+                <li className="nav-item"><a className="nav-link" href="index.html">Home</a></li>
+                <li className="nav-item"><a className="nav-link" href="inventory.html">Inventory</a></li>
+              </ul>
             </div>
-            <menu className='navbar-nav'>
-              <li className='nav-item'>
-                <NavLink className='nav-link' to=''>
-                  Login
-                </NavLink>
-              </li>
-              {authState === AuthState.Authenticated && (
-                <li className='nav-item'>
-                  <NavLink className='nav-link' to='play'>
-                    Play
-                  </NavLink>
-                </li>
-              )}
-              {authState === AuthState.Authenticated && (
-                <li className='nav-item'>
-                  <NavLink className='nav-link' to='scores'>
-                    Scores
-                  </NavLink>
-                </li>
-              )}
-              <li className='nav-item'>
-                <NavLink className='nav-link' to='about'>
-                  About
-                </NavLink>
-              </li>
-            </menu>
-          </nav>
-        </header>
-
-        <Routes>
-          <Route
-            path='/'
-            element={
-              <Login
-                userName={userName}
-                authState={authState}
-                onAuthChange={(userName, authState) => {
-                  setAuthState(authState);
-                  setUserName(userName);
-                }}
-              />
-            }
-            exact
-          />
-          <Route path='/play' element={<Play userName={userName} />} />
-          <Route path='/scores' element={<Scores />} />
-          <Route path='/about' element={<About />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-
-        <footer className='bg-dark text-dark text-muted'>
-          <div className='container-fluid'>
-            <span className='text-reset'>Author Name(s)</span>
-            <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
-              Source
-            </a>
+            <a className="navbar-brand" href="index.html">Krecia Fullmer Art</a>
+            <div className="navbar-nav">
+              {/* Right-side menu items */}
+              <ul className="navbar-nav">
+                <li className="nav-item"><a className="nav-link" href="faq.html">FAQ</a></li>
+                <li className="nav-item"><a className="nav-link" href="checkout.html">Checkout</a></li>
+              </ul>
+            </div>
           </div>
-        </footer>
+          {/* Add a button for toggling the navigation menu */}
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          {/* Add a container for the collapsible navigation menu */}
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            {/* Collapsible navigation menu (if needed) */}
+          </div>
+        </div>
+      </nav>
+
+        {/* Welcome Header */}
+      <WelcomeHeader />
+
+
+      <div className="quote-container">
+        <div id="quote" className="quote-box"></div>
       </div>
-    </BrowserRouter>
+
+      {/* Footer */}
+      <footer className="Footer" role="contentinfo" data-controller="FooterBreakpoints" data-controllers-bound="FooterBreakpoints">
+        <div className="Footer-inner clear">
+          <div className="container">
+            <div className="row">
+              <div className="col-12">
+                <p style={{ textAlign: 'center' }}>
+                  <a href="inventory.html">Collections</a> | <a href="faq.html">FAQ</a> | <a href="contact.html">Contact</a>
+                </p>
+                <p style={{ textAlign: 'center', fontSize: '9px' }}>© 2023 Krecia Fullmer Art LLC, All rights reserved</p>
+                <p style={{ textAlign: 'center', fontSize: '9px' }}>Taj Poulsen- <a href="https://github.com/SaboTaj22/startup.git" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
 
-function NotFound() {
-  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
-}
-
 export default App;
+
