@@ -1,9 +1,17 @@
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import WelcomeHeader from './login/WelcomeHeader';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Login } from './login/login';
+import { Inventory } from './inventory/inventory';
+import { Faq } from './faq/Faq';
+import { Checkout } from './checkout/checkout';
+import { Contact } from './contact/contact'
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div>
       {/* Navigation elements */}
       <nav className="navbar navbar-expand-lg">
@@ -13,16 +21,16 @@ function App() {
             <div className="navbar-nav">
               {/* Left-side menu items */}
               <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link" href="index.html">Home</a></li>
-                <li className="nav-item"><a className="nav-link" href="inventory.html">Inventory</a></li>
+                <li className="nav-item"><NavLink className="nav-link" to="/login">Home</NavLink></li>
+                <li className="nav-item"><NavLink className="nav-link" to="/inventory">Inventory</NavLink></li>
               </ul>
             </div>
-            <a className="navbar-brand" href="index.html">Krecia Fullmer Art</a>
+            <NavLink className="navbar-brand" to="index">Krecia Fullmer Art</NavLink>
             <div className="navbar-nav">
               {/* Right-side menu items */}
               <ul className="navbar-nav">
-                <li className="nav-item"><a className="nav-link" href="faq.html">FAQ</a></li>
-                <li className="nav-item"><a className="nav-link" href="checkout.html">Checkout</a></li>
+                <li className="nav-item"><NavLink className="nav-link" to="/faq">FAQ</NavLink></li>
+                <li className="nav-item"><NavLink className="nav-link" to="/checkout">Checkout</NavLink></li>
               </ul>
             </div>
           </div>
@@ -38,8 +46,14 @@ function App() {
         </div>
       </nav>
 
-        {/* Welcome Header */}
-      <WelcomeHeader />
+      <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path='/inventory' element={<Inventory />} />
+          <Route path='/faq' element={<Faq />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/checkout' element={<Checkout />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
 
 
       <div className="quote-container">
@@ -53,17 +67,22 @@ function App() {
             <div className="row">
               <div className="col-12">
                 <p style={{ textAlign: 'center' }}>
-                  <a href="inventory.html">Collections</a> | <a href="faq.html">FAQ</a> | <a href="contact.html">Contact</a>
+                  <NavLink to="inventory">Collection</NavLink> | <NavLink to="faq">FAQ</NavLink> | <NavLink to="contact">Contact</NavLink>
                 </p>
                 <p style={{ textAlign: 'center', fontSize: '9px' }}>© 2023 Krecia Fullmer Art LLC, All rights reserved</p>
-                <p style={{ textAlign: 'center', fontSize: '9px' }}>Taj Poulsen- <a href="https://github.com/SaboTaj22/startup.git" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+                <p style={{ textAlign: 'center', fontSize: '9px' }}>Taj Poulsen- <NavLink to="https://github.com/SaboTaj22/startup.git" target="_blank" rel="noopener noreferrer">GitHub</NavLink></p>
               </div>
             </div>
           </div>
         </div>
       </footer>
     </div>
+    </BrowserRouter>
   );
+}
+
+function NotFound() {
+  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
 }
 
 export default App;

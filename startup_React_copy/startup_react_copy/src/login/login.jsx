@@ -1,6 +1,6 @@
 import React from 'react';
 
-function WelcomeHeader() {
+function Login() {
   return (
     <header className="welcome-header">
       <h1>Welcome</h1>
@@ -10,4 +10,4 @@ function WelcomeHeader() {
   );
 }
 
-export default WelcomeHeader;
+export default Login;

@@ -2,10 +2,9 @@ import React from 'react';
 
 function checkout() {
   return (
-    <header className="welcome-header">
-      <h1>Welcome</h1>
-      <p>Subscribe to receive updates!</p>
-      {/* Add any other content specific to WelcomeHeader */}
+    <header className="checkout-header">
+      <h1>Checkout</h1>
+      <p>This is the checkout page!</p>
     </header>
   );
 }
