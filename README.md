@@ -121,7 +121,7 @@ For this deliverable I converted the application over to use Vue. I know it is s
 
 - Bundled and transpiled - done!
 - Components - CustomerFooter, CustomNavbar, and Quote are all components. I had a few others that I got started on but didn't have the time to complete them. 
-- Router - Routing between root, contact, and error-page components. (I created an error page because I didn't have time to complete all the pages in my original website.)
+- Router - Routing between root, contact, and error-page components. (I created an error page because I didn't have time to complete all the pages in my original website. If you click on a page other than contact or the main home page, it shows the error page.)
 - Hooks - I utilized useState, useEffect, and useCallback. This is done to display quotes. 
 - Application converted to use React - done!
 - Mutiple Git commits with meaningful comments - done!
