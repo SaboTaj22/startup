@@ -2,11 +2,11 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { Login } from './login/login';
-import { Inventory } from './inventory/inventory';
-import { Faq } from './faq/Faq';
-import { Checkout } from './checkout/checkout';
-import { Contact } from './contact/contact'
+// import { Login } from './components/login';
+// import { Inventory } from './components/inventory';
+// import { Faq } from './components/faq';
+// import { Checkout } from './components/checkout';
+// import { Contact } from './components/contact'
 
 
 function App() {
@@ -47,11 +47,11 @@ function App() {
       </nav>
 
       <Routes>
-          <Route path='/login' element={<Login />} />
+          {/* <Route path='/login' element={<Login />} />
           <Route path='/inventory' element={<Inventory />} />
           <Route path='/faq' element={<Faq />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/checkout' element={<Checkout />} />
+          <Route path='/checkout' element={<Checkout />} /> */}
           <Route path='*' element={<NotFound />} />
         </Routes>
 
