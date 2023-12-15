@@ -120,16 +120,10 @@ For this deliverable I used Websockets to create a live chat in the FAQ page in 
 For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
 
 - Bundled and transpiled - done!
-- Components - Login, voting list, vote are all components.
-- Router - Routing between login and voting components.
-- Hooks - Vue uses class properties instead of UseState to track changes in vote state.
-- Application converted to use React
-
-Grading Scale
-- 10% Bundled using WebPack and Babel as generated from using create-react-app
-- 30% Multiple functional react components
-- 30% React router
-- 20% React hooks
-- 10% - Multiple Git commits with meaningful comments.
+- Components - CustomerFooter, CustomNavbar, and Quote are all components. I had a few others that I got started on but didn't have the time to complete them. 
+- Router - Routing between root, contact, and error-page components. (I created an error page because I didn't have time to complete all the pages in my original website. If you click on a page other than contact or the main home page, it shows the error page.)
+- Hooks - I utilized useState, useEffect, and useCallback. This is done to display quotes. 
+- Application converted to use React - done!
+- Mutiple Git commits with meaningful comments - done!
   
 [Link: notes.md](notes.md)
