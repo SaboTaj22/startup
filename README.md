@@ -117,7 +117,7 @@ For this deliverable I used Websockets to create a live chat in the FAQ page in 
 - WebSocket data displayed - All user conversations display in realtime!
 
 # React Deliverable
-For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
+For this deliverable I converted the application over to React. I converted the home page and the contact page using components, hooks, and set up the router. 
 
 - Bundled and transpiled - done!
 - Components - CustomerFooter, CustomNavbar, and Quote are all components. I had a few others that I got started on but didn't have the time to complete them. 
